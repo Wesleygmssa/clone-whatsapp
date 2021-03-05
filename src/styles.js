@@ -88,6 +88,3 @@ export const Button = styled.div`
 
 `;
 
-export const Chatwindow = styled.div`
-
-`;

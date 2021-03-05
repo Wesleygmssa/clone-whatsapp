@@ -5,6 +5,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
 import ChatListItem from './components/ChatListItem';
 import ChatIntro from './components/ChatIntro';
+import ChatWindow from  './components/Chatwindow';
 import { 
   AppWindow, 
   SideBar, 
@@ -14,7 +15,7 @@ import {
   ChatList,
   Button,
   SearchInput,
-  Chatwindow
+  
 } from './styles';
 
 function App() {
@@ -54,10 +55,10 @@ function App() {
             </ChatList>
       </SideBar>
       <ContainerArea>
-        {activeChat.chatId && <Chatwindow/>}
-        
+        {activeChat.chatId && <ChatWindow/>}
+
         {activeChat.chatId === undefined &&
-         <Chatwindow/>
+         <ChatWindow/>
          }
         <ChatIntro/>
       </ContainerArea>
