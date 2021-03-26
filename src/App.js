@@ -19,7 +19,21 @@ import {
 import { GlobalStyled } from "./styles/global";
 
 function App() {
-  const [chatlist, setChatList] = useState([]);
+  const [chatlist, setChatList] = useState([
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ]);
   const [activeChat, setActive] = useState({});
   return (
     <>
