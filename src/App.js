@@ -20,21 +20,29 @@ import { GlobalStyled } from "./styles/global";
 
 function App() {
   const [chatlist, setChatList] = useState([
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
+    {
+      chatId: 1,
+      title: "Fulano de tal",
+      image: "https://avatars.githubusercontent.com/u/41512408?v=4",
+    },
+    {
+      chatId: 2,
+      title: "Fulano de tal",
+      image: "https://avatars.githubusercontent.com/u/41512408?v=4",
+    },
+    {
+      chatId: 3,
+      title: "Fulano de tal",
+      image: "https://avatars.githubusercontent.com/u/41512408?v=4",
+    },
+    {
+      chatId: 4,
+      title: "Fulano de tal",
+      image: "https://avatars.githubusercontent.com/u/41512408?v=4",
+    },
   ]);
-  const [activeChat, setActive] = useState({});
+  const [activeChat, setActiveChat] = useState({});
+  console.log(activeChat);
   return (
     <>
       <AppWindow>
@@ -67,15 +75,19 @@ function App() {
           </Search>
           <ChatList>
             {chatlist.map((item, key) => (
-              <ChatListItem key={key} />
+              <ChatListItem
+                key={key}
+                onClick={() => {
+                  setActiveChat(chatlist[key]);
+                }}
+              />
             ))}
           </ChatList>
         </SideBar>
         <ContainerArea>
-          {activeChat.chatId && <ChatWindow />}
+          {activeChat.chatId !== undefined && <ChatWindow />}
 
-          {activeChat.chatId === undefined && <ChatWindow />}
-          <ChatIntro />
+          {activeChat.chatId === undefined && <ChatIntro />}
         </ContainerArea>
       </AppWindow>
       <GlobalStyled />
