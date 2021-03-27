@@ -13,7 +13,6 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import CloseIcon from "@material-ui/icons/Close";
 import SendIcon from "@material-ui/icons/Send";
-import MicIcon from "@material-ui/icons/Mic";
 import EmojiPicker from "emoji-picker-react";
 
 const ChatWindow = () => {
@@ -38,7 +37,7 @@ const ChatWindow = () => {
       <Header>
         <div className="chatWindow-info">
           <img
-            src="https://avatars.githubusercontent.com/u/63751937?v=4"
+            src="https://img.r7.com/images/2014/08/12/2ekxd7mfze_7m1aumtmx8_file"
             alt=""
             className="chatWindow-avatar"
           />
