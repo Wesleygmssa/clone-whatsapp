@@ -47,5 +47,42 @@ export const GroupButtons = styled.div`
   }
 `;
 
-export const Main = styled.div``;
-export const Footer = styled.div``;
+export const Main = styled.div`
+  flex: 1;
+  overflow-y: auto;
+  background: #e5ddd5;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://external-preview.redd.it/rEwFriCkfAtjOb5b-23b4tGGVcuvfaBhttps://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.pngqamYNJrgxnLM.png?auto=webp&s=f3bf0b5c90e4c5fda12ff2139781c854554fd198");
+`;
+export const Footer = styled.div`
+  height: 62px;
+  display: flex;
+  align-items: center;
+
+  .chatWindow-pre {
+    display: flex;
+    margin: 0 15px;
+  }
+
+  .chatWindow-inputarea {
+    flex: 1;
+
+    input {
+      width: 100%;
+      height: 40px;
+      border: 0;
+      outline: 0;
+      background-color: #fff;
+      border-radius: 20px;
+      font-size: 15px;
+      color: #4a4a4a;
+      padding-left: 15px;
+    }
+  }
+
+  .chatWindow-pos {
+    display: flex;
+    margin: 0 15px;
+  }
+`;
