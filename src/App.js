@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 import ChatIcon from "@material-ui/icons/Chat";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
@@ -19,7 +19,7 @@ import {
 import { GlobalStyled } from "./styles/global";
 
 function App() {
-  const [chatlist, setChatList] = useState([
+  const [chatlist] = useState([
     {
       chatId: 1,
       title: "Fulano de tal",
