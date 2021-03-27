@@ -13,7 +13,6 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import CloseIcon from "@material-ui/icons/Close";
 import SendIcon from "@material-ui/icons/Send";
-import MicIcon from "@material-ui/icons/Mic";
 import EmojiPicker from "emoji-picker-react";
 
 const ChatWindow = () => {
