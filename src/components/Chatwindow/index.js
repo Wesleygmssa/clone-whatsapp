@@ -1,14 +1,38 @@
-import React from "react";
-import { Container, Header, Main, Footer, GroupButtons } from "./styles";
+import React, { useState } from "react";
+import {
+  Container,
+  Header,
+  Main,
+  Footer,
+  GroupButtons,
+  EmojiArea,
+} from "./styles";
 import SearchIcon from "@material-ui/icons/Search";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
+import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import CloseIcon from "@material-ui/icons/Close";
 import SendIcon from "@material-ui/icons/Send";
 import MicIcon from "@material-ui/icons/Mic";
+import EmojiPicker from "emoji-picker-react";
 
 const ChatWindow = () => {
+  const [emojiOpen, setEmojiOpen] = useState(false);
+
+  const handleEmojiClick = () => {};
+
+  const handleOpenEmoji = () => {
+    if (emojiOpen) {
+      setEmojiOpen(false);
+    } else {
+      setEmojiOpen(true);
+    }
+  };
+
+  const handleCloseEmoji = () => {
+    setEmojiOpen(false);
+  };
+
   return (
     <Container>
       <Header>
@@ -34,10 +58,26 @@ const ChatWindow = () => {
         </GroupButtons>
       </Header>
       <Main></Main>
+      <EmojiArea style={{ height: emojiOpen ? "200px" : "0px" }}>
+        <EmojiPicker
+          onEmojiClick={handleEmojiClick}
+          disableSearchBar
+          disableSkinTonePicker
+        />
+      </EmojiArea>
       <Footer>
         <div className="chatWindow-pre">
-          <div className="chatWindow-btn">
-            <EmojiEmotionsIcon style={{ color: "#919191" }} />
+          <div
+            className="chatWindow-btn"
+            onClick={handleCloseEmoji}
+            style={{ width: emojiOpen ? 40 : 0 }}
+          >
+            <CloseIcon style={{ color: "#919191" }} />
+          </div>
+          <div className="chatWindow-btn" onClick={handleOpenEmoji}>
+            <InsertEmoticonIcon
+              style={{ color: emojiOpen ? "#009688" : "#919191" }}
+            />
           </div>
         </div>
         <div className="chatWindow-inputarea">

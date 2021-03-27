@@ -44,6 +44,7 @@ export const GroupButtons = styled.div`
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: all ease 0.3s;
   }
 `;
 
@@ -59,6 +60,18 @@ export const Footer = styled.div`
   height: 62px;
   display: flex;
   align-items: center;
+
+  .chatWindow-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all ease 0.3s;
+  }
 
   .chatWindow-pre {
     display: flex;
@@ -84,5 +97,17 @@ export const Footer = styled.div`
   .chatWindow-pos {
     display: flex;
     margin: 0 15px;
+  }
+`;
+export const EmojiArea = styled.div`
+  height: 200px;
+  overflow-y: hidden;
+  transition: all ease 0.3s;
+  aside.emoji-picker-react {
+    width: auto;
+    background: none;
+  }
+  .emoji-picker-react .emoji-group:before {
+    background: none;
   }
 `;
