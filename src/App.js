@@ -22,23 +22,23 @@ function App() {
   const [chatlist] = useState([
     {
       chatId: 1,
-      title: "Fulano de tal",
-      image: "https://avatars.githubusercontent.com/u/41512408?v=4",
+      title: "Wesley Guerra",
+      avatar: "https://avatars.githubusercontent.com/u/41512408?v=4",
     },
     {
       chatId: 2,
-      title: "Fulano de tal",
-      image: "https://avatars.githubusercontent.com/u/41512408?v=4",
+      title: "Luana",
+      avatar: "https://avatars.githubusercontent.com/u/46823530?v=4",
     },
     {
       chatId: 3,
-      title: "Fulano de tal",
-      image: "https://avatars.githubusercontent.com/u/41512408?v=4",
+      title: "Maria",
+      avatar: "https://avatars.githubusercontent.com/u/28602785?v=4",
     },
     {
       chatId: 4,
-      title: "Fulano de tal",
-      image: "https://avatars.githubusercontent.com/u/41512408?v=4",
+      title: "João",
+      avatar: "https://avatars.githubusercontent.com/u/41512408?v=4",
     },
   ]);
   const [activeChat, setActiveChat] = useState({});
@@ -77,6 +77,8 @@ function App() {
             {chatlist.map((item, key) => (
               <ChatListItem
                 key={key}
+                data={item}
+                active={activeChat.chatId === chatlist[key].chatId}
                 onClick={() => {
                   setActiveChat(chatlist[key]);
                 }}
