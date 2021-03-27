@@ -28,17 +28,19 @@ function App() {
     {
       chatId: 2,
       title: "Luana",
-      avatar: "https://avatars.githubusercontent.com/u/46823530?v=4",
+      avatar:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-4NJrAgITT4xbcz5rr9EtObMHw5PgjcBeCA&usqp=CAU",
     },
     {
       chatId: 3,
       title: "Maria",
-      avatar: "https://avatars.githubusercontent.com/u/28602785?v=4",
+      avatar: "https://img.r7.com/images/2014/08/12/2ekxd7mfze_7m1aumtmx8_file",
     },
     {
       chatId: 4,
-      title: "João",
-      avatar: "https://avatars.githubusercontent.com/u/41512408?v=4",
+      title: "Fernanda",
+      avatar:
+        "https://i.pinimg.com/236x/bc/43/60/bc4360bac1e89a91999dc3a2ec3f5a4d.jpg",
     },
   ]);
   const [activeChat, setActiveChat] = useState({});
