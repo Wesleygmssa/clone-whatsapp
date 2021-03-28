@@ -31,7 +31,7 @@ const ChatWindow = ({ user }) => {
   const [emojiOpen, setEmojiOpen] = useState(false);
   const [text, setText] = useState("");
   const [listening, setListening] = useState(false);
-  const [list, setList] = useState([
+  const [list] = useState([
     {
       author: 123,
       body:

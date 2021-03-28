@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Container, Header, List, NewChatItem } from "./styles";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 export const NewChat = ({ user, chatlist, show, setShow }) => {
-  const [list, setList] = useState([
+  const [list] = useState([
     {
       id: 123,
       avatar: "https://avatars.githubusercontent.com/u/41512408?v=4",
