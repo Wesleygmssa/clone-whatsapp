@@ -56,6 +56,16 @@ export const Main = styled.div`
   background-position: center;
   background-image: url("https://external-preview.redd.it/rEwFriCkfAtjOb5b-23b4tGGVcuvfaBhttps://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.pngqamYNJrgxnLM.png?auto=webp&s=f3bf0b5c90e4c5fda12ff2139781c854554fd198");
   padding: 20px 30px;
+
+  &::-webkit-scrollbar {
+    // bara de rolagem
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
 `;
 
 export const MessageItem = styled.div``;

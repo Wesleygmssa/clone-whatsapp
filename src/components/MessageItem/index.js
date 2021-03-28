@@ -8,7 +8,11 @@ export const MessageItem = ({ data, user }) => {
         justifyContent: user.id === data.author ? "flex-end" : "flex-start",
       }}
     >
-      <MessageItemContent>
+      <MessageItemContent
+        style={{
+          backgroundColor: user.id === data.author ? "#DCF8C6" : "#fff",
+        }}
+      >
         <div className="messageText">{data.body}</div>
         <div className="messageDate">13:00</div>
       </MessageItemContent>
