@@ -45,7 +45,7 @@ function App() {
     },
   ]);
   const [activeChat, setActiveChat] = useState({});
-  const [user, setUser] = useState({
+  const [user] = useState({
     id: 1234,
     avatar: "https://avatars.githubusercontent.com/u/41512408?v=4",
     name: "Wesley Guerra",
