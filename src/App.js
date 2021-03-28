@@ -17,6 +17,7 @@ import {
   SearchInput,
 } from "./styles";
 import { GlobalStyled } from "./styles/global";
+import { NewChat } from "./components/NewChat";
 
 function App() {
   const [chatlist] = useState([
@@ -44,21 +45,35 @@ function App() {
     },
   ]);
   const [activeChat, setActiveChat] = useState({});
-  console.log(activeChat);
+  const [user, setUser] = useState({
+    id: 1234,
+    avatar: "https://avatars.githubusercontent.com/u/41512408?v=4",
+    name: "Wesley Guerra",
+  });
+
+  const [showNewChat, setShowNewChat] = useState(false);
+
+  const handleNewChat = () => {
+    setShowNewChat(true);
+  };
+
   return (
     <>
       <AppWindow>
         <SideBar>
+          <NewChat
+            chatlist={chatlist}
+            user={user}
+            show={showNewChat}
+            setShow={setShowNewChat}
+          />
           <Header>
-            <img
-              src="https://avatars.githubusercontent.com/u/41512408?v=4"
-              alt=""
-            />
+            <img src={user.avatar} alt="" />
             <Button>
               <div>
                 <DonutLargeIcon style={{ color: "#919191" }} />
               </div>
-              <div>
+              <div onClick={handleNewChat}>
                 <ChatIcon style={{ color: "#919191" }} />
               </div>
               <div>
@@ -89,7 +104,7 @@ function App() {
           </ChatList>
         </SideBar>
         <ContainerArea>
-          {activeChat.chatId !== undefined && <ChatWindow />}
+          {activeChat.chatId !== undefined && <ChatWindow user={user} />}
 
           {activeChat.chatId === undefined && <ChatIntro />}
         </ContainerArea>
