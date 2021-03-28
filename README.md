@@ -5,7 +5,7 @@
 </h3>
 
 <p align="center">
-   <img src="whatsapp.png" >
+   <img src="whatsapp_2.gif" >
 </p>
 
 ### :computer: How To Run
