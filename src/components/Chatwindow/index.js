@@ -15,6 +15,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import SendIcon from "@material-ui/icons/Send";
 import EmojiPicker from "emoji-picker-react";
 import MicIcon from "@material-ui/icons/Mic";
+import { MessageItem } from "../MessageItem";
 
 const ChatWindow = () => {
   let recognition = null;
@@ -28,6 +29,20 @@ const ChatWindow = () => {
   const [emojiOpen, setEmojiOpen] = useState(false);
   const [text, setText] = useState("");
   const [listening, setListening] = useState(false);
+  const [list, setList] = useState([
+    {
+      body:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+    },
+    {
+      body:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+    },
+    {
+      body:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+    },
+  ]);
 
   const handleEmojiClick = (e, emojiObject) => {
     setText(text + emojiObject.emoji);
@@ -87,7 +102,11 @@ const ChatWindow = () => {
           </div>
         </GroupButtons>
       </Header>
-      <Main></Main>
+      <Main>
+        {list.map((item, key) => (
+          <MessageItem key={key} data={item} />
+        ))}
+      </Main>
       <EmojiArea style={{ height: emojiOpen ? "200px" : "0px" }}>
         <EmojiPicker
           onEmojiClick={handleEmojiClick}
