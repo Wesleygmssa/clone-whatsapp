@@ -44,16 +44,17 @@ function App() {
     },
   ]);
   const [activeChat, setActiveChat] = useState({});
-  console.log(activeChat);
+  const [user, setUser] = useState({
+    id: 1234,
+    avatar: "https://avatars.githubusercontent.com/u/41512408?v=4",
+    name: "Wesley Guerra",
+  });
   return (
     <>
       <AppWindow>
         <SideBar>
           <Header>
-            <img
-              src="https://avatars.githubusercontent.com/u/41512408?v=4"
-              alt=""
-            />
+            <img src={user.avatar} alt="" />
             <Button>
               <div>
                 <DonutLargeIcon style={{ color: "#919191" }} />
@@ -89,7 +90,7 @@ function App() {
           </ChatList>
         </SideBar>
         <ContainerArea>
-          {activeChat.chatId !== undefined && <ChatWindow />}
+          {activeChat.chatId !== undefined && <ChatWindow user={user} />}
 
           {activeChat.chatId === undefined && <ChatIntro />}
         </ContainerArea>

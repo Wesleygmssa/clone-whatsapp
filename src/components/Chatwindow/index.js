@@ -17,7 +17,7 @@ import EmojiPicker from "emoji-picker-react";
 import MicIcon from "@material-ui/icons/Mic";
 import { MessageItem } from "../MessageItem";
 
-const ChatWindow = () => {
+const ChatWindow = ({ user }) => {
   let recognition = null;
   let SpeechRecognition =
     window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -31,14 +31,17 @@ const ChatWindow = () => {
   const [listening, setListening] = useState(false);
   const [list, setList] = useState([
     {
+      author: "123",
       body:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
     },
     {
+      author: "123",
       body:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
     },
     {
+      author: "1234",
       body:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
     },
@@ -104,7 +107,7 @@ const ChatWindow = () => {
       </Header>
       <Main>
         {list.map((item, key) => (
-          <MessageItem key={key} data={item} />
+          <MessageItem key={key} data={item} user={user} />
         ))}
       </Main>
       <EmojiArea style={{ height: emojiOpen ? "200px" : "0px" }}>
